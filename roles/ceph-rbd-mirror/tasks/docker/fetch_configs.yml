@@ -1,11 +1,9 @@
 ---
-# NOTE (leseb): the mds container needs the admin key
-# so it can create the mds pools for cephfs
 - name: set config and keys paths
   set_fact:
     ceph_config_keys:
       - /etc/ceph/{{ cluster }}.conf
-      - /etc/ceph/{{ cluster }}.client.admin.keyring
+      - /var/lib/ceph/bootstrap-rbd-mirror/{{ cluster }}.keyring
 
 - name: stat for ceph config and keys
   local_action: stat path={{ fetch_directory }}/docker_mon_files/{{ item }}

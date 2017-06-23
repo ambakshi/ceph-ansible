@@ -8,3 +8,4 @@
     mode: "0755"
   with_items:
     - /etc/ceph/
+    - /var/lib/ceph/bootstrap-rbd-mirror
